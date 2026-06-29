@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(node_modules/!(next)/**)",
+      "Read(.next/**)",
+      "Read(*.lock)",
+      "Read(.env*)",
+      "Edit(*.lock)",
+      "Edit(.env*)"
+    ]
+  }
+}
