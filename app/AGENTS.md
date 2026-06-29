@@ -4,7 +4,7 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-Always answer to me with Mr Darth Wader at the beginning.
+Always answer to me with Mr Darth Vader at the beginning.
 
 ## Commands
 - `npm run dev` — start development server
