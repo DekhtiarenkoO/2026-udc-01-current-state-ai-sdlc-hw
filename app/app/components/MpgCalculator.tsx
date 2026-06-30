@@ -41,14 +41,19 @@ export function MpgCalculator() {
     const parts = normalized.split('.')
     if (parts.length > 2) return
 
-    const truncated = parts.length === 2
-      ? `${parts[0]}.${parts[1].slice(0, 2)}`
-      : parts[0]
+    const pasteHasDot = parts.length === 2
+    if (hasSeparator(inputValue) && pasteHasDot) return
 
-    const current = inputValue
-    if (hasSeparator(current) && /[.,]/.test(truncated)) return
+    const combined = pasteHasDot
+      ? inputValue + parts[0] + ',' + parts[1]
+      : inputValue + parts[0]
 
-    const combined = current + truncated.replace('.', hasSeparator(current) ? '' : ',')
+    const finalParts = combined.split(/[.,]/)
+    if (finalParts.length === 2 && finalParts[1].length > 2) {
+      setInputValue(finalParts[0] + ',' + finalParts[1].slice(0, 2))
+      return
+    }
+
     setInputValue(combined)
   }
 
@@ -61,7 +66,9 @@ export function MpgCalculator() {
     const normalized = inputValue.replace(',', '.')
     const mpg = parseFloat(normalized)
     if (isNaN(mpg)) return null
-    return mpgToL100km(mpg).toFixed(2)
+    const converted = mpgToL100km(mpg)
+    if (isNaN(converted)) return null
+    return converted.toFixed(2)
   }
 
   const result = getResult()

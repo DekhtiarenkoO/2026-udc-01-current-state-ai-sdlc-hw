@@ -1,7 +1,12 @@
 Споживання токенів за фічу:
 - в сесії використано 54.7k токенів із 1 мільйона (5%)
 - npx repomix повернув: total tokens: 65.514k
-- (54 700/1 000 000) * 3 = ~0,1641 (mainly input tokens) (Claude Sonnet (currently version 4.6) API pricing is $3.00 per million input tokens and $15.00 per million output tokens)
+- input cost:
+  (49 700/1 000 000) * 3 = 0,1491$ (Claude Sonnet (currently version 4.6) API pricing is $3.00 per million input tokens)
+- output cost:
+  (5 000/1 000 000) * 15 = 0,075$ (Claude Sonnet (currently version 4.6) API pricing is $15.00 per million output tokens)
+- total:
+   0,1491 + 0,075 = 0,2241$
 
 **2-3 оптимізації**
 - (використовувалась модель Sonnet 4.6)для запитань/відповідей по за контекстом проекта,

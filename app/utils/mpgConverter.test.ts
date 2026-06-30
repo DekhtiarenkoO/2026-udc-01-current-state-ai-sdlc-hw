@@ -13,8 +13,12 @@ describe('mpgToL100km', () => {
     expect(mpgToL100km(40)).toBe(5.88)
   })
 
-  it('returns 0 for 0 mpg', () => {
-    expect(mpgToL100km(0)).toBe(0)
+  it('returns NaN for 0 mpg', () => {
+    expect(mpgToL100km(0)).toBeNaN()
+  })
+
+  it('returns NaN for negative mpg', () => {
+    expect(mpgToL100km(-10)).toBeNaN()
   })
 
   it('rounds using HALF_UP at 2 decimal places', () => {
