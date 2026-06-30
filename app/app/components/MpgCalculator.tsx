@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, KeyboardEvent, ClipboardEvent } from 'react'
-import { mpgToL100km } from '@/utils/mpgConverter'
+import { mpgToL100km } from '@/utils/mpg-converter'
 
 export function MpgCalculator() {
   const [inputValue, setInputValue] = useState('')

@@ -1,4 +1,4 @@
-import { mpgToL100km } from './mpgConverter'
+import { mpgToL100km } from './mpg-converter'
 
 describe('mpgToL100km', () => {
   it('converts 20 mpg to 11.76 L/100km', () => {
